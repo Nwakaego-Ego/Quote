@@ -17,21 +17,28 @@ const Quote = () => {
   };
 
   const handleTwitterShare = () => {
-    // Check if there's a quote to share
     if (motivationalQuote) {
       const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-        `"${motivationalQuote.content}" - ${motivationalQuote.author}`
+        `"${motivationalQuote.content}" - ${motivationalQuote.author} `
       )}`;
       window.open(twitterUrl, "_blank");
     }
   };
 
+  //   const handleFacebookShare = () => {
+  //     if (motivationalQuote) {
+  //       const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+  //         "YourWebsiteURL"
+  //       )}&quote=${encodeURIComponent(
+  //         `"${motivationalQuote.content}" - ${motivationalQuote.author}`
+  //       )}`;
+  //       window.open(facebookUrl, "_blank");
+  //     }
+  //   };
+
   const handleFacebookShare = () => {
-    // Check if there's a quote to share
     if (motivationalQuote) {
-      const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-        "YourWebsiteURL" // Replace with your actual website URL
-      )}&quote=${encodeURIComponent(
+      const facebookUrl = `https://www.facebook.com/sharer/sharer.php?quote=${encodeURIComponent(
         `"${motivationalQuote.content}" - ${motivationalQuote.author}`
       )}`;
       window.open(facebookUrl, "_blank");
@@ -46,8 +53,7 @@ const Quote = () => {
         <div className="mb-4">
           <p className="text-lg font-semibold">{motivationalQuote.author}</p>
           <p className="text-gray-700">{motivationalQuote.content}</p>
-          {/* Format the date if needed */}
-          <p className="text-sm text-gray-500">{motivationalQuote.dateAdded}</p>
+          {/* <p className="text-gray-700">{motivationalQuote.dateAdded}</p> */}
         </div>
       )}
 
